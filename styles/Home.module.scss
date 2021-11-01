@@ -1,0 +1,127 @@
+@import 'variables/colors';
+
+.animationArea {
+  background: transparent;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 100vh;
+}
+
+.boxArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.boxArea li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 25px;
+  height: 25px;
+  background: $blue-02;
+  animation: animate 15s linear infinite;
+  bottom: -150px;
+}
+
+.boxArea li:nth-child(1) {
+  left: 56%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.boxArea li:nth-child(2) {
+  left: 60%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 2.5s;
+}
+
+.boxArea li:nth-child(3) {
+  left: 70%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 5.5s;
+}
+
+.boxArea li:nth-child(4) {
+  left: 82%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 8s;
+}
+
+.boxArea li:nth-child(5) {
+  left: 65%;
+  width: 40px;
+  height: 40px;
+  animation-delay: 6.2s;
+}
+
+.boxArea li:nth-child(6) {
+  left: 48%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3.5s;
+  animation-duration: 6s;
+}
+
+.boxArea li:nth-child(7) {
+  left: 89%;
+  width: 70px;
+  height: 70px;
+  animation-delay: 3.5s;
+}
+
+.boxArea li:nth-child(8) {
+  left: 59%;
+  width: 70px;
+  height: 70px;
+  animation-delay: 7.5s;
+}
+
+.boxArea li:nth-child(9) {
+  left: 69%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 1.5s;
+}
+
+.boxArea li:nth-child(10) {
+  left: 68%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 2.5s;
+  animation-duration: 10s;
+}
+
+.boxArea li:nth-child(11) {
+  left: 62%;
+  width: 90px;
+  height: 90px;
+  animation-delay: 6.5s;
+  animation-duration: 5s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-600px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 767px) { 
+  .animationArea {
+    display: none;
+  }
+}
