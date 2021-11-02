@@ -1,4 +1,6 @@
-@import 'variables/colors';
+@import 'shared/variables/colors';
+@import 'shared/components/input';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,4 +28,29 @@ a {
 img {
 	height: auto;
   width: 100%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 9px;
+	z-index: 999;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #888;
+	border-radius: 10px;
+	z-index: 999;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $dark;
+	border-radius: 10px;
+	z-index: 999;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $dark;
 }
