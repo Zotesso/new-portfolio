@@ -1,6 +1,19 @@
-import styles from '../styles/Home.module.scss';
+import { useEffect } from 'react';
+import Aos from 'aos';
 
-function Home() {
+import ProjectItem from '../components/Project/project-item';
+import styles from '../styles/Home.module.scss';
+import 'aos/dist/aos.css';
+
+const Home = () => {
+  const projectSections = [...Array(3)];
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1500,
+    });
+  })
+
   return (
     <div>
       <main className="w-full h-screen p-2">
@@ -42,8 +55,19 @@ function Home() {
           </ul>
         </div>
       </main>
-      <section>
-        Teste
+      <section className="overflow-hidden">
+        {
+          projectSections.map((el, index) => (
+            <div data-aos="fade-up" data-aos-duration="3000" key={index}>
+              <ProjectItem
+              key={index}
+              projectTitle="Estrella" 
+              projectDescription="Survival Horror developed with Unreal 4"
+              imageSrc="" 
+              projectTechnologies="C++" />
+            </div>
+          ))
+        }
       </section>
     </div>
   );
