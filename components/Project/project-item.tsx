@@ -10,10 +10,10 @@ interface ProjectItemBase {
 
 function ProjectItem(item: ProjectItemBase) {
   return (
-    <ProjectWrapper>
+    <ProjectWrapper reversed={item.reversed}>
       <ProjectImage src={item.imageSrc} width='250' height='250' />
-      <article>
-        <h1 className='title'>
+      <article className='ml-8 mr-8 font-display text-dark'>
+        <h1 className='title text-xl md:text-3xl font-semibold '>
           { item.projectTitle }
         </h1>
         <p className='description'>
@@ -22,6 +22,9 @@ function ProjectItem(item: ProjectItemBase) {
         <p className='technologies'>
         { item.projectTechnologies }
         </p>
+        <a href="#">
+          <img src="/images/github-logo.svg" width='24' height='24' alt="Link para o Github do Projeto" />
+        </a>
       </article>
     </ProjectWrapper>
   );

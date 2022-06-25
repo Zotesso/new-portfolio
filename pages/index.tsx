@@ -61,9 +61,10 @@ const Home = () => {
             <div data-aos="fade-up" data-aos-duration="3000" key={index}>
               <ProjectItem
               key={index}
+              reversed={index % 2 !== 0}
               projectTitle="Estrella" 
               projectDescription="Survival Horror developed with Unreal 4"
-              imageSrc="" 
+              imageSrc="https://picsum.photos/200/300" 
               projectTechnologies="C++" />
             </div>
           ))
