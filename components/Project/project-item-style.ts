@@ -20,6 +20,6 @@ export const ProjectImage = styled.img`
   background-color: #fff;
   border-radius: 50%;
   border: 2px solid #44408e;
-  -webkit-box-shadow: -1px 3px 15px -1px rgba(0,0,0,0.66); 
+  -webkit-box-shadow: -1px 3px 15px -1px rgba(0,0,0,0.66);
   box-shadow: -1px 3px 15px -1px rgba(0,0,0,0.66);
 `;

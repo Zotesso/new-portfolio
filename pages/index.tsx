@@ -4,6 +4,7 @@ import Aos from 'aos';
 import ProjectItem from '../components/Project/project-item';
 import styles from '../styles/Home.module.scss';
 import 'aos/dist/aos.css';
+import TabFilter from '../components/TabFilter/tab-filter';
 
 const Home = () => {
   const projectSections = [...Array(3)];
@@ -38,7 +39,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        
+
         <div className={styles.animationArea}>
           <ul className={styles.boxArea}>
             <li></li>
@@ -56,15 +57,19 @@ const Home = () => {
         </div>
       </main>
       <section className="overflow-hidden">
+        <h1 className="md:text-5xl text-2xl md:mb-4 font-semibold text-center mt-8 underline text-dark font-display">
+          Projects
+        </h1>
+        <TabFilter tabs={['Web', 'Mobile', 'Desktop']}></TabFilter>
         {
           projectSections.map((el, index) => (
             <div data-aos="fade-up" data-aos-duration="3000" key={index}>
               <ProjectItem
               key={index}
               reversed={index % 2 !== 0}
-              projectTitle="Estrella" 
+              projectTitle="Estrella"
               projectDescription="Survival Horror developed with Unreal 4"
-              imageSrc="https://picsum.photos/200/300" 
+              imageSrc="https://picsum.photos/200/300"
               projectTechnologies="C++" />
             </div>
           ))

@@ -23,7 +23,7 @@ function ProjectItem(item: ProjectItemBase) {
         { item.projectTechnologies }
         </p>
         <a href="#">
-          <img src="/images/github-logo.svg" width='24' height='24' alt="Link para o Github do Projeto" />
+          <img src="/images/github-logo.svg" className='icon' width='32' height='32' alt="Link para o Github do Projeto" />
         </a>
       </article>
     </ProjectWrapper>
