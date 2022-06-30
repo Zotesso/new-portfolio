@@ -63,13 +63,13 @@ const Home = () => {
         <TabFilter tabs={['Web', 'Mobile', 'Desktop']}></TabFilter>
         {
           projectSections.map((el, index) => (
-            <div data-aos="fade-up" data-aos-duration="3000" key={index}>
+            <div data-aos="fade-up" data-aos-duration="1000" key={index}>
               <ProjectItem
               key={index}
               reversed={index % 2 !== 0}
               projectTitle="Estrella"
               projectDescription="Survival Horror developed with Unreal 4"
-              imageSrc="https://picsum.photos/200/300"
+              imageSrc="/images/computer-mockup.png"
               projectTechnologies="C++" />
             </div>
           ))

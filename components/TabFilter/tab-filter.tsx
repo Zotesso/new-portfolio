@@ -7,11 +7,11 @@ interface TabFilter {
 }
 
 function TabFilter(tab: TabFilter) {
-  let target: Element, links: NodeListOf<Element>, colors: string[];
+  let target: HTMLElement, links: HTMLElement[], colors: string[];
 
   useEffect(() => {
-    target = Array.from(document.getElementsByClassName('bar') as HTMLCollectionOf<HTMLElement>)[0]
-    links = document.querySelectorAll(".horizontal-tab a");
+    target = Array.from(document.getElementsByClassName('bar') as HTMLCollectionOf<HTMLElement>)[0];
+    links = Array.from(document.getElementsByClassName("menu-option") as HTMLCollectionOf<HTMLElement>);
     colors = ["#5851d3e5", "#5b55d6", "#5a53dab7", "#5955a8b7", "#6764a3b7", "#504c9cf1"];
     for (let i = 0; i < links.length; i++) {
       links[i].addEventListener("click", (e) => e.preventDefault());
@@ -45,7 +45,7 @@ function TabFilter(tab: TabFilter) {
           tab.tabs.map((tabName, index) => (
             <li>
               <a
-              className="text-xl mx-8 cursor-pointer z-20 font-regular text-center text-dark font-display"
+              className="menu-option text-xl mx-8 cursor-pointer z-20 font-regular text-center text-dark font-display"
               href=""
               key={index}>{ tabName }</a>
             </li>

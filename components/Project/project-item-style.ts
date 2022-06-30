@@ -6,20 +6,19 @@ interface ProjectWrapperProps {
 
 export const ProjectWrapper = styled.section<ProjectWrapperProps>`
   width: 100%;
+  max-width: 800px;
   max-height: 400px;
-  padding: 24px;
+  padding: 48px;
   display: flex;
-  flex-direction: ${props => props.reversed ? 'row-reverse' : 'row'};
+  padding-left: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 `;
 
 export const ProjectImage = styled.img`
-  width: 250px;
-  height: 250px;
-  background-color: #fff;
-  border-radius: 50%;
-  border: 2px solid #44408e;
-  -webkit-box-shadow: -1px 3px 15px -1px rgba(0,0,0,0.66);
-  box-shadow: -1px 3px 15px -1px rgba(0,0,0,0.66);
+  max-width: 400px;
+  max-height: 400px;
 `;
