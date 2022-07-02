@@ -1,17 +1,10 @@
+import { ProjectItemBase } from '../../shared/models/project-item.model';
 import { ProjectImage, ProjectWrapper } from './project-item-style';
-
-interface ProjectItemBase {
-  projectTitle: string;
-  projectDescription: string;
-  imageSrc: string;
-  projectTechnologies: string;
-  reversed?: boolean;
-}
 
 function ProjectItem(item: ProjectItemBase) {
   return (
     <ProjectWrapper reversed={item.reversed}>
-      <ProjectImage src={item.imageSrc} width='250' height='250' />
+      <ProjectImage src={item.imageSrc} />
       <article className='ml-8 mr-8 font-display text-dark'>
         <h1 className='title text-xl md:text-3xl font-semibold '>
           { item.projectTitle }

@@ -1,19 +1,33 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Aos from 'aos';
 
 import ProjectItem from '../components/Project/project-item';
 import styles from '../styles/Home.module.scss';
 import 'aos/dist/aos.css';
 import TabFilter from '../components/TabFilter/tab-filter';
+import { Tab } from '../shared/models/tab.model';
+import { ProjectItemBase } from '../shared/models/project-item.model';
+import Projects from '../shared/utils/projects';
 
 const Home = () => {
-  const projectSections = [...Array(3)];
+  const [projects, setProjects] = useState<ProjectItemBase[]>([]);
+  const tabs: Tab[] = [
+    { id: 0, name: 'Web' },
+    { id: 1, name: 'Mobile' },
+    { id: 2, name: 'Desktop' }
+  ];
+
+  const getProjectsByTab = (tabIndex: number): void => {
+    setProjects(Projects[tabIndex]);
+  }
 
   useEffect(() => {
+    getProjectsByTab(tabs[0].id);
+
     Aos.init({
       duration: 1500,
     });
-  })
+  }, [])
 
   return (
     <div>
@@ -56,21 +70,22 @@ const Home = () => {
           </ul>
         </div>
       </main>
+
       <section className="overflow-hidden">
         <h1 className="md:text-5xl text-2xl md:mb-4 font-semibold text-center mt-8 underline text-dark font-display">
           Projects
         </h1>
-        <TabFilter tabs={['Web', 'Mobile', 'Desktop']}></TabFilter>
+        <TabFilter tabs={tabs} onClick={getProjectsByTab}></TabFilter>
         {
-          projectSections.map((el, index) => (
+          projects.map((el, index) => (
             <div data-aos="fade-up" data-aos-duration="1000" key={index}>
               <ProjectItem
               key={index}
               reversed={index % 2 !== 0}
-              projectTitle="Estrella"
-              projectDescription="Survival Horror developed with Unreal 4"
-              imageSrc="/images/computer-mockup.png"
-              projectTechnologies="C++" />
+              projectTitle={el.projectTitle}
+              projectDescription={el.projectDescription}
+              imageSrc={el.imageSrc}
+              projectTechnologies={el.projectTechnologies} />
             </div>
           ))
         }

@@ -1,12 +1,13 @@
-import { useEffect } from 'react';
+import { MouseEventHandler, useEffect } from 'react';
+import { Tab } from '../../shared/models/tab.model';
 import { TabFloatBar, HorizontalTab } from './tab-filter-style';
 
-interface TabFilter {
-  tabs: string[];
-  mainColor?: string;
-}
+interface TabFilterProps {
+  tabs: Tab[];
+  onClick: (id: number) => void;
+};
 
-function TabFilter(tab: TabFilter) {
+function TabFilter(props: TabFilterProps) {
   let target: HTMLElement, links: HTMLElement[], colors: string[];
 
   useEffect(() => {
@@ -42,12 +43,15 @@ function TabFilter(tab: TabFilter) {
     <HorizontalTab className="horizontal-tab">
       <ul>
         {
-          tab.tabs.map((tabName, index) => (
+          props.tabs.map((tab, index) => (
             <li>
               <a
               className="menu-option text-xl mx-8 cursor-pointer z-20 font-regular text-center text-dark font-display"
               href=""
-              key={index}>{ tabName }</a>
+              key={tab.id}
+              onClick={() => props.onClick(tab.id)}>
+                { tab.name }
+              </a>
             </li>
           ))
         }
