@@ -17,10 +17,15 @@ function Footer() {
           <Bubble />
           <Bubble />
           <Bubble />
+          <Bubble />
+          <Bubble />
+          <Bubble />
+          <Bubble />
+          <Bubble />
         </BubbleContainer>
-      <StyledFooter>
+      {/* <StyledFooter>
         Made by Pedro Zotesso - <a href="">about me</a>
-      </StyledFooter>
+      </StyledFooter> */}
     </footer>
   );
 }
