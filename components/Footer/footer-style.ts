@@ -6,7 +6,7 @@ const bubbleFloat = keyframes`
     transform: translateY(0) rotate(0deg);
     opacity: 1;
   }
-  100% {
+  80% {
     transform: translateY(-300px) rotate(360deg);
     opacity: 0.4;
   }

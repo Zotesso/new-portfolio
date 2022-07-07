@@ -1,7 +1,7 @@
 import { Bubble, BubbleContainer, StyledFooter } from './footer-style';
 import styles from '../../styles/Home.module.scss';
 
-function Footer() {
+function Footer(props: any) {
   return (
     <footer>
         <BubbleContainer>
